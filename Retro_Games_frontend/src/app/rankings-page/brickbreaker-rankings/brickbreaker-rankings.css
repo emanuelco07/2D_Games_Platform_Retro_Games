@@ -1,0 +1,101 @@
+main {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    color: #f5f5f5;
+}
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    justify-content: center; 
+    padding: 10px;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
+    align-items: center;
+}
+
+.leaderboard {
+    background: rgba(30, 60, 114, 0.85);
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0, 224, 225, 0.6);
+    max-width: 400px;
+    width: 100%;
+}
+
+.leaderboard h4 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    color: #00e0ff;
+    text-shadow: 0 0 10px #00e0ff, 0 0 20px rgba(255, 235, 59, 0.6);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    color: #f5f5f5;
+    text-align: center;
+}
+
+thead {
+    background-color: #4caf50;
+    color: #ffffff;
+}
+
+thead th {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+tbody tr {
+    transition: background 0.2s;
+}
+
+tbody tr:nth-child(even) {
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+tbody tr:hover {
+    background-color: #2196f3;
+    transform: scale(1.01);
+}
+
+tbody td {
+    padding: 8px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+button {
+    margin-top: 20px;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    border: none;
+    border-radius: 12px;
+    background-color: #4caf50; 
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 224, 255, 0.6); 
+}
+
+button:hover {
+    background-color: #2196f3;
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 224, 255, 0.9);
+}
+
+button:active {
+    transform: scale(0.95);
+    background-color: #1976d2; 
+}

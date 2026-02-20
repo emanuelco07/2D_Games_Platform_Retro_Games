@@ -1,0 +1,18 @@
+<main>
+    <h1 class="title">Report Bugs</h1>
+    <div class="chat_container">
+        <form [formGroup]="bugForm" (ngSubmit)="sendMessage()" class="chat_form">
+            <input
+                type="text"
+                formControlName="description"
+                placeholder="Scrie un mesaj..."
+                class="chat_input"
+            />
+            <button type="submit" [disabled]="bugForm.invalid" class="chat_button">Trimite</button>
+        </form>
+    </div>
+
+    <button class="b2" (click)="goToGamesPage()">
+        Back
+    </button>
+</main>

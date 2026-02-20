@@ -1,0 +1,54 @@
+<main>
+  <div class="container">
+    <div class="menu">
+      <div class="leaderboard">
+        <h4>Leaderboard</h4>
+        <ol>
+          <li *ngFor="let user of leaderboard"> 
+            {{ user.username }} — {{ user.highScore }}
+          </li>
+        </ol>
+      </div>
+      <h4 class="message">Good luck, {{username}}! </h4>
+      <p>
+        <button class="b1" (click)="startGame()">
+          {{ playing ? 'Restart' : 'Play again' }}
+        </button>
+
+        <button class="b2" (click)="goToStartPage()">
+          Back
+        </button>
+
+        <button class="b3" (click)="onLogout()">
+          Logout
+        </button>
+
+        <button class="b4" (click)="togglePause()">
+          {{ pause ? 'Resume' : 'Pause' }}
+        </button>
+      </p>
+    </div>
+
+    <div id="game">
+      <div class="piece">
+        <div *ngFor="let row of arena; let y = index" class="row">
+          <div *ngFor="let cell of row; let x = index" class="cell" [ngStyle]="{ 'background': getCellColor(x, y) }">
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="next_piece_container">
+      <h3>Life</h3>
+      <div class="next_piece">
+        <div *ngFor="let row of lifeArena; let y = index" class="row">
+          <div *ngFor="let cell of row; let x = index" class="cell"
+            [ngStyle]="{ 'background': getLifeArenaColor(x, y) }"></div>
+        </div>
+      </div>
+      <h3>Score: {{ points }}!</h3>
+      <h3>{{message}}</h3>
+    </div>
+
+  </div>
+</main>

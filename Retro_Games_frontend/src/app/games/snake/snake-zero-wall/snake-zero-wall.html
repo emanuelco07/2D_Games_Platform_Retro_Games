@@ -1,0 +1,49 @@
+<main>
+  <div class="leaderboard">
+    <h4>Leaderboard</h4>
+    <ol>
+      <li *ngFor="let user of leaderboard">
+        {{ user.username }} — {{ user.highScore }}
+      </li>
+    </ol>
+  </div>
+  <h4 class="message">Good luck, {{username}}! Score: {{points}}! Mode: No Wall!</h4> 
+  <p>
+    <button class="b1" (click)="startGame()">
+      {{ playing ? 'Restart' : (started ? 'Play again' : 'Play') }} 
+    </button>
+    
+    <button class="b2" (click)="goToStartPage()">
+      Back
+    </button>
+    
+    <button class="b3" (click)="onLogout()">
+      Logout
+    </button>
+
+    <button class="b4" (click)="togglePause()">
+          {{ pause ? 'Resume' : 'Pause' }}
+    </button>
+  </p>
+
+  <div id="game">
+
+    <!-- plasam marul, coordonatele de baza for fi coltul din stanga sus, la fel si la sarpe -->
+    <div 
+      id="apple" 
+      [style]="{top: apple.y +'px', left: apple.x + 'px'}"
+    ></div>
+
+    <!-- {{ apple | json}} -->
+    @for(block of snake; track $index) {
+      <!-- {{ block | json}} -->
+      <div 
+        class="block" 
+        [class.head]="$index === snake.length - 1" 
+        [style]="{top: block.y + 'px', left: block.x + 'px'}"
+      ></div> <!-- adaugam clasa head doar la capul sarpelui -->
+    }
+
+  </div>
+  <h3>{{message}}</h3>
+</main>

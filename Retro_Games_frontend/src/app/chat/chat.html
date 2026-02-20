@@ -1,0 +1,30 @@
+<main>
+    <h1 class="title">Chat</h1>
+    <div class="chat_container">
+        <form [formGroup]="chatForm" (ngSubmit)="sendMessage()" class="chat_form">
+            <input
+                type="text"
+                formControlName="message"
+                placeholder="Scrie un mesaj..."
+                class="chat_input"
+            />
+            <button type="submit" [disabled]="chatForm.invalid" class="chat_button">Trimite</button>
+        </form>
+
+        <div class="chat_messages">
+            <div *ngFor="let chat of chats" class="chat_message">
+                <strong>{{ chat.username }}</strong>
+                <span>{{ chat.message }}</span>&nbsp; 
+                <small>{{ chat.sendAt | date:'short' }}</small>
+            </div>
+        </div>
+    </div>
+
+    <button class="b1" (click)="refreshChat()">
+        Refresh
+    </button>
+
+    <button class="b2" (click)="goToGamesPage()">
+        Back
+    </button>
+</main>

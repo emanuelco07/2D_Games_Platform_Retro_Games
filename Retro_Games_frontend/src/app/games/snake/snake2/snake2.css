@@ -1,0 +1,142 @@
+main {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  margin: 0;
+  padding: 0;
+} 
+
+#game {
+  width: 800px;
+  height: 600px;
+  border: 1px solid black;
+  position: relative;
+}
+
+#apple {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%; 
+  position: absolute;
+  background-color: #FF4500;
+}
+
+.block {
+  width: 40px;
+  height: 40px;
+  border-radius: 16px;
+  position: absolute;
+  background-color: #32CD32;
+}
+
+.block.head {
+  background-color: #1E90FF; 
+}
+
+.leaderboard {
+  background-color: #f1f1f1;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 8px;
+  max-width: 300px;
+}
+
+.leaderboard h4 {
+  text-align: center;
+}
+
+.b1 {
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background-color: #4CAF50;
+  color: white;
+  cursor: pointer;
+  margin: 3px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.b1:hover {
+  background-color: #45a049;
+  transform: scale(1.05);
+}
+
+.b1:active {
+  transform: scale(0.98);
+}
+
+.b2 {
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff0000;
+  color: white;
+  cursor: pointer;
+  margin: 3px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.b2:hover {
+  background-color: #e60000;
+  transform: scale(1.05);
+}
+
+.b2:active {
+  transform: scale(0.98);
+}
+
+.b3 {
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background-color: #0000ff;
+  color: white;
+  cursor: pointer;
+  margin: 3px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.b3:hover {
+  background-color: #0000e6;
+  transform: scale(1.05);
+}
+
+.b3:active {
+  transform: scale(0.98);
+}
+
+.b4 {
+  padding: 10px 12px;
+  font-size: 12px;
+  font-weight: bold;
+  border: none;
+  border-radius: 12px;
+  background-color: #ff6600;
+  color: white;
+  cursor: pointer;
+  margin: 3px;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.b4:hover {
+  background-color: #e65c00;
+  transform: scale(1.05);
+}
+
+.b4:active {
+  transform: scale(0.98);
+}
+
+.message {
+  margin-top: 10x;
+  margin-bottom: 0px;
+}
