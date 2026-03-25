@@ -1,12 +1,10 @@
 .start_container {
     height: 100vh;
     /* pentru a ocupa tot ecranul */
-    background-image: url('/assets/images/start_page_background.jpg');
+    background-image: url('/images/start_page_background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    border: 3px solid red; /* test vizual */
-
 }
 
 button:hover {
@@ -18,9 +16,12 @@ button:hover {
     font-size: 5rem;
     margin-bottom: 1rem;
     color: #00e0ff;
-    text-shadow: 0 0 10px #00e0ff, 0 0 20px rgba(255, 255, 0, 0.6);
+    text-shadow:
+        0 0 10px #00e0ff,
+        0 0 20px #ff66cc,
+        0 0 30px rgba(255, 102, 204, 0.5);
 }
 
 .title:hover {
-    color: #ffeb3b;
+    color: #ff66cc;
 }
