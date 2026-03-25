@@ -1,16 +1,38 @@
-<body>
-  <div class="login_container">
-    <h2>Login</h2>
-    <form (ngSubmit)="login()">
-      <label>Username:
-        <input [(ngModel)]="username" name="username">
-      </label><br>
-      <label>Password:
-        <input [(ngModel)]="password" name="password" type="password">
-      </label><br>
-      <button type="submit">Login</button>
-    </form>
-    <p style="color:red">{{ error }}</p>
-    <a routerLink="/register">Register</a>
+<div class="container-fluid d-flex flex-column justify-content-center login_container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2 class="fs-1 fw-bold">Login</h2>
+    </div>
   </div>
-</body>
+
+  <div class="row">
+    <form (ngSubmit)="login()" class="col-md-4 my-4 mx-md-auto text-center">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input [(ngModel)]="username" name="username" id="username" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input [(ngModel)]="password" name="password" id="password" class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-success btn-lg d-block w-100 btn_login">Login</button>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <p style="color:red">{{ error }}</p>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-12 col-md-4 mx-auto text-center">
+      <button type="submit" class="btn btn-warning btn-lg d-block w-100 btn_register" routerLink="/register">
+        Register
+      </button>
+    </div>
+  </div>
+
+</div>
