@@ -1,20 +1,42 @@
-<body>
-  <div class="register_container">
-    <h2>Register</h2>
-    <form (ngSubmit)="register()">
-      <label>Username:
-        <input [(ngModel)]="username" name="username">
-      </label><br>
-      <label>Password:
-        <input [(ngModel)]="password" name="password" type="password">
-      </label><br>
-      <label>Confirm Password:
-        <input [(ngModel)]="confirmPassword" name="confirmPassword" type="password">
-      </label><br>
-      <button type="submit">Register</button>
-    </form>
-    <p style="color:red">{{ error }}</p>
-    <p style="color:green">{{ success }}</p>
-    <a routerLink="/login">Login</a>
+<div class="container-fluid d-flex flex-column justify-content-center register_container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h2 class="fs-1 fw-bold">Register</h2>
+    </div>
   </div>
-</body>
+
+  <div class="row">
+    <form (ngSubmit)="register()" class="col-md-4 my-4 mx-md-auto text-center">
+      <div class="mb-3">
+        <label for="username" class="form-label">Username</label>
+        <input [(ngModel)]="username" name="username" id="username" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="password" class="form-label">Password</label>
+        <input [(ngModel)]="password" type="password" name="password" id="password" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label for="confirmPassword" class="form-label">Confirm Password</label>
+        <input [(ngModel)]="confirmPassword" type="password" name="confirmPassword" id="confirmPassword" class="form-control">
+      </div>
+
+      <button type="submit" class="btn btn-outline-success btn-lg d-block w-100 btn_login">Register</button>
+    </form>
+  </div>
+
+  <div class="row">
+    <div class="col-12">
+      <p style="color:red">{{ error }}</p>
+    </div>
+  </div>
+
+  <div class="row text-center">
+    <div class="col-12 col-md-4 mx-auto text-center">
+      <button type="submit" class="btn btn-warning btn-lg d-block w-100 btn_register" routerLink="/login">
+        Login
+      </button>
+    </div>
+  </div>
+</div>
