@@ -14,22 +14,18 @@ public class BugsController : ControllerBase
     {
         _context = context;
     }
-    
+
     // POST api/bugs
     [HttpPost]
     public async Task<IActionResult> PostBug([FromBody] Bug bug)
     {
-        if (string.IsNullOrWhiteSpace(bug.Description))
-        {
-            return BadRequest("Mesajul este obligatoriu!");
-        }
+        if (string.IsNullOrWhiteSpace(bug.Description)) return BadRequest("Mesajul este obligatoriu!");
 
         bug.ReportedAt = DateTime.UtcNow;
 
         _context.Bugs.Add(bug);
         await _context.SaveChangesAsync();
 
-        return Ok(bug); 
+        return Ok(bug);
     }
-    
 }

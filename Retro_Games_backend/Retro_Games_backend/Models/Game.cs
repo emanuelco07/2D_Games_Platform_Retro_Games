@@ -8,11 +8,9 @@ public class Game
     [Key]
     [DatabaseGenerated(DatabaseGeneratedOption.Identity)] //indica auto-increment
     public int Id { get; set; }
-    
-    [Required]
-    [MaxLength(100)]
-    public required string Name { get; set; }
-    
-    public ICollection<UserGameScore>? UserGameScores { get; set; } =  new List<UserGameScore>();
+
+    [Required] [MaxLength(100)] public required string Name { get; set; }
+
+    public ICollection<UserGameScore>? UserGameScores { get; set; } = new List<UserGameScore>();
     //permite sa vezi scorul inregistrat pentru un anumit joc
 }

@@ -5,9 +5,10 @@ namespace WebApplication1.Data;
 
 public class ApplicationDbContext : DbContext
 {
-    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) :  base(options)
-    {}
-    
+    public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) : base(options)
+    {
+    }
+
     //aceasta va deveni tabela "Users" in baza de date
     public DbSet<User> Users { get; set; }
     public DbSet<Game> Games { get; set; }
@@ -18,12 +19,12 @@ public class ApplicationDbContext : DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         base.OnModelCreating(modelBuilder);
-        
+
         //sa ne asiguram ca username ul este unic, cu toate ca am specificat asta la crearea "tabelei"
         modelBuilder.Entity<User>()
             .HasIndex(u => u.Username)
             .IsUnique();
-        
+
         //adaugam cateva jocuri in baza de date
         modelBuilder.Entity<Game>().HasData(
             new Game { Id = 1, Name = "Snake" },
@@ -33,18 +34,42 @@ public class ApplicationDbContext : DbContext
             new Game { Id = 5, Name = "Goal Scorer" },
             new Game { Id = 6, Name = "Super Bricks" }
         );
-        
+
         //adaugam cativa utilizatori in baza de date
         modelBuilder.Entity<User>().HasData(
-            new User { Id = 1, Username = "test_user_c_sharp", Password = "$2a$11$rn.FwhrTjNC7E9O3Fk3nm.3CEY.wIZKqbBK6rpWXdPs6tBGoxgueW"},
-            new User { Id = 2, Username = "emanuel",  Password = "$2a$11$7i6PP.C/M84I6FsFFFJS2eOKJlppUMAeEb6QzyJ4thZp1U5FEFYjK" },
-            new User { Id = 3, Username = "emanuelco.07",   Password = "$2a$11$b1mfR7RAIB1VeHIAwu8Dn.zkS7WwJnIWrWzDzbsRvfEGd7bLFQAsy" },
-            new User { Id = 4, Username = "andrei", Password = "$2a$11$hazM9eN4lNB2h0awMOXebOkAfWSdBMFFr4fjAbnE4Nx6EALpf2nVu"  },
-            new User { Id = 5, Username = "final_boss", Password = "$2a$11$x40hWgbfhTmpkasJUwbLH.nEJoLTHP6kNUik203DUG.JVZw4xHm0G"  },
-            new User { Id = 6, Username = "vale", Password = "$2a$11$c2iv...by4i8jWxLj38nT.W9N3RiZpmAZaUIDEGBjcsjmLX31Jv.e "  },
-            new User { Id = 7, Username = "beni", Password = "$2a$11$zhLty/lZixfjZERsRlPDQebGoEIlvKlS3ITUrJMFIMr.NbacbwECG"}
+            new User
+            {
+                Id = 1, Username = "test_user_c_sharp",
+                Password = "$2a$11$rn.FwhrTjNC7E9O3Fk3nm.3CEY.wIZKqbBK6rpWXdPs6tBGoxgueW"
+            },
+            new User
+            {
+                Id = 2, Username = "emanuel", Password = "$2a$11$7i6PP.C/M84I6FsFFFJS2eOKJlppUMAeEb6QzyJ4thZp1U5FEFYjK"
+            },
+            new User
+            {
+                Id = 3, Username = "emanuelco.07",
+                Password = "$2a$11$b1mfR7RAIB1VeHIAwu8Dn.zkS7WwJnIWrWzDzbsRvfEGd7bLFQAsy"
+            },
+            new User
+            {
+                Id = 4, Username = "andrei", Password = "$2a$11$hazM9eN4lNB2h0awMOXebOkAfWSdBMFFr4fjAbnE4Nx6EALpf2nVu"
+            },
+            new User
+            {
+                Id = 5, Username = "final_boss",
+                Password = "$2a$11$x40hWgbfhTmpkasJUwbLH.nEJoLTHP6kNUik203DUG.JVZw4xHm0G"
+            },
+            new User
+            {
+                Id = 6, Username = "vale", Password = "$2a$11$c2iv...by4i8jWxLj38nT.W9N3RiZpmAZaUIDEGBjcsjmLX31Jv.e "
+            },
+            new User
+            {
+                Id = 7, Username = "beni", Password = "$2a$11$zhLty/lZixfjZERsRlPDQebGoEIlvKlS3ITUrJMFIMr.NbacbwECG"
+            }
         );
-        
+
         // adaugam scorurile utilizatorilor in baza de date
         modelBuilder.Entity<UserGameScore>().HasData(
             new UserGameScore

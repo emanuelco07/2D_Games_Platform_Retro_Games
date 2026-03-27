@@ -1,8 +1,8 @@
-using Microsoft.EntityFrameworkCore;
-using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using System.Text.Json;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using WebApplication1.Data;
 
@@ -21,7 +21,8 @@ builder.Services.AddSwaggerGen(options =>
         Scheme = "Bearer",
         BearerFormat = "JWT",
         In = ParameterLocation.Header,
-        Description = "JWT Authorization header using the Bearer scheme. Enter 'Bearer ' [space] and then your token in the text input below.\n\nExample: 'Bearer 12345abcdef'",
+        Description =
+            "JWT Authorization header using the Bearer scheme. Enter 'Bearer ' [space] and then your token in the text input below.\n\nExample: 'Bearer 12345abcdef'"
     });
 
     options.AddSecurityRequirement(new OpenApiSecurityRequirement
@@ -35,7 +36,7 @@ builder.Services.AddSwaggerGen(options =>
                     Id = "Bearer"
                 }
             },
-            new string[] {}
+            new string[] { }
         }
     });
 });
@@ -43,7 +44,7 @@ builder.Services.AddSwaggerGen(options =>
 
 //inregistrarea controllelor
 builder.Services.AddControllers()
-    .AddJsonOptions(options => 
+    .AddJsonOptions(options =>
     {
         //aceasta linie este esentiala pentru a converti PascalCase (HighScore) in camelCase (highScore)
         options.JsonSerializerOptions.PropertyNamingPolicy = JsonNamingPolicy.CamelCase;
@@ -79,27 +80,27 @@ builder.Services.AddCors(options =>
 
 //Configurare JWT Authentication
 builder.Services.AddAuthentication(options =>
-{
-    options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
-    options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
-})
-.AddJwtBearer(options =>
-{
-    //setari pentru validarea tocken ului
-    options.TokenValidationParameters = new TokenValidationParameters
     {
-        ValidateIssuer = true, //valideaza emitentul tocken ului
-        ValidateAudience = true, //valideaza audienta (clientul)
-        ValidateLifetime = true, //valideaza durata de viata a tocken ului
-        ValidateIssuerSigningKey = true, //valideaza cheia de semnare
+        options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+        options.DefaultScheme = JwtBearerDefaults.AuthenticationScheme;
+    })
+    .AddJwtBearer(options =>
+    {
+        //setari pentru validarea tocken ului
+        options.TokenValidationParameters = new TokenValidationParameters
+        {
+            ValidateIssuer = true, //valideaza emitentul tocken ului
+            ValidateAudience = true, //valideaza audienta (clientul)
+            ValidateLifetime = true, //valideaza durata de viata a tocken ului
+            ValidateIssuerSigningKey = true, //valideaza cheia de semnare
 
-        //valori citite din appsettings.json
-        ValidIssuer = builder.Configuration["Jwt:Issuer"],
-        ValidAudience = builder.Configuration["Jwt:Audience"],
-        IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
-    };
-});
+            //valori citite din appsettings.json
+            ValidIssuer = builder.Configuration["Jwt:Issuer"],
+            ValidAudience = builder.Configuration["Jwt:Audience"],
+            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(builder.Configuration["Jwt:Key"]!))
+        };
+    });
 
 builder.Services.AddAuthorization(); //pentru adaugarea serviciului de autorizare
 

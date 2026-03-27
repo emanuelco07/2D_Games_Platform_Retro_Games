@@ -143,8 +143,6 @@ D:\Retro_Games_backend\Retro_Games_backend\obj\Debug\net9.0\refint\Retro_Games_b
 D:\Retro_Games_backend\Retro_Games_backend\obj\Debug\net9.0\Retro_Games_backend.pdb
 D:\Retro_Games_backend\Retro_Games_backend\obj\Debug\net9.0\Retro_Games_backend.genruntimeconfig.cache
 D:\Retro_Games_backend\Retro_Games_backend\obj\Debug\net9.0\ref\Retro_Games_backend.dll
-D:\Retro_Games\Retro_Games_backend\Retro_Games_backend\bin\Debug\net9.0\._appsettings.Development.json
-D:\Retro_Games\Retro_Games_backend\Retro_Games_backend\bin\Debug\net9.0\._appsettings.json
 D:\Retro_Games\Retro_Games_backend\Retro_Games_backend\bin\Debug\net9.0\appsettings.Development.json
 D:\Retro_Games\Retro_Games_backend\Retro_Games_backend\bin\Debug\net9.0\appsettings.json
 D:\Retro_Games\Retro_Games_backend\Retro_Games_backend\bin\Debug\net9.0\Properties\._launchSettings.json
