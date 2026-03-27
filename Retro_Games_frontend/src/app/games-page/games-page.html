@@ -1,13 +1,54 @@
-<div class="start_container">
-    <h1 class="title">Retro Games</h1>
-    <button (click)="goToSnake()">Snake</button>
-    <button (click)="goToTetris()">Tetris</button>
-    <button (click)="goToBrickBreaker()">Brick Breaker</button>
-    <button (click)="goToBrickBreaker2()">Brick Breaker 2</button>
-    <button (click)="goToGoalscorer()">Goal Scorer</button>
-    <button (click)="goToSuperBricks()">Super Bricks</button>
-    <button (click)="goToChat()">Chat</button>
-    <button (click)="goToReportBugs()">Report Bugs</button>
-    <button (click)="goToRankingsPage()">Rankings</button>
-    <button (click)="goToFirstPage()">Logout</button>
+<div class="container-fluid d-flex flex-column justify-content-center start_container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="title fw-bold">Retro Games</h1>
+        </div>
+    </div>
+
+    <div class="row mx-md-5">
+        <div class="col-md-4 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-success btn-lg d-block w-100 fw-bold" (click)="goToSnake()">Snake</button>
+        </div>
+
+        <div class="col-md-4 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-success btn-lg d-block w-100 fw-bold" (click)="goToTetris()">Tetris</button>
+        </div>
+
+        <div class="col-md-4 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-success btn-lg d-block w-100 fw-bold" (click)="goToBrickBreaker()">Brick
+                Breaker</button>
+        </div>
+    </div>
+
+    <div class="row mx-md-5">
+        <div class="col-md-4 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-success btn-lg d-block w-100 fw-bold" (click)="goToBrickBreaker2()">Brick Breaker 2</button>
+        </div>
+
+        <div class="col-md-4 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-success btn-lg d-block w-100 fw-bold" (click)="goToGoalscorer()">Goal Scorer</button>
+        </div>
+
+        <div class="col-md-4 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-success btn-lg d-block w-100 fw-bold" (click)="goToSuperBricks()">Super Bricks</button>
+        </div>
+    </div>
+
+    <div class="row mx-md-5">
+        <div class="col-md-3 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-primary btn-lg d-block w-100 fw-bold" (click)="goToChat()">Chat</button>
+        </div>
+
+        <div class="col-md-3 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-info btn-lg d-block w-100 fw-bold" (click)="goToRankingsPage()">Rankings</button>
+        </div>
+
+        <div class="col-md-3 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-warning btn-lg d-block w-100 fw-bold" (click)="goToReportBugs()">Report Bugs</button>
+        </div>
+
+        <div class="col-md-3 mb-2 mx-auto text-center">
+            <button class="btn btn-outline-danger btn-lg d-block w-100 fw-bold" (click)="goToFirstPage()">Logout</button>
+        </div>
+    </div>
 </div>

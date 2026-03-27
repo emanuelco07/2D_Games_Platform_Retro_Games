@@ -7,8 +7,12 @@
     background-repeat: no-repeat;
 }
 
+.btn {
+    border-width: 3px;
+    font-size: 1.3rem;
+}
+
 button:hover {
-    background-color: #2196f3;
     transform: scale(1.05);
 }
 
