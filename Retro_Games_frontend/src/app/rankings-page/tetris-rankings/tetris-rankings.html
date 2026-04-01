@@ -1,26 +1,30 @@
-<main>
-  <div class="container">
-    <div class="menu">
-      <div class="leaderboard">
-        <h4>Rankings - Tetris</h4>
-        <table>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>Username</th>
-              <th>High Score</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr *ngFor="let user of rankings; let i = index">
-              <td>{{ i + 1 }}</td>
-              <td>{{ user.username }}</td>
-              <td>{{ user.highScore }}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-      <button (click)="goToRankingsPage()">Back</button>
+<div class="container-fluid d-flex flex-column justify-content-center start_container">
+  <div class="row mx-1 mx-md-5 mb-2">
+    <div class="col-md-12 p-md-3 text-center leaderboard">
+      <h4>Rankings - Tetris</h4>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Username</th>
+            <th>High Score</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let user of rankings; let i = index">
+            <td>{{ i + 1 }}</td>
+            <td>{{ user.username }}</td>
+            <td>{{ user.highScore }}</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
+    
   </div>
-</main>
+
+  <div class="row mx-md-5 text-center">
+    <div class="col-md-12">
+      <button class="btn btn-primary btn-lg d-block w-100 fw-bold" (click)="goToRankingsPage()">Back</button>
+    </div>
+  </div>  
+</div>
