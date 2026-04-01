@@ -1,15 +1,14 @@
-main {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
-  margin: 0;
-  padding: 0;
-} 
+.start_container {
+    height: 100vh;
+    /* pentru a ocupa tot ecranul */
+    background-image: url('/images/snake_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 
 #game {
+  background-color: rgba(255, 255, 255, 0.7);
   width: 800px;
   height: 600px;
   border: 1px solid black;
@@ -21,7 +20,7 @@ main {
   height: 40px;
   border-radius: 50%; 
   position: absolute;
-  background-color: #FF4500;
+  background-color: rgb(255, 239, 16);
 }
 
 .block {
@@ -29,114 +28,36 @@ main {
   height: 40px;
   border-radius: 16px;
   position: absolute;
-  background-color: #32CD32;
+  background-color: rgba(39, 181, 39, 0.9);
 }
 
 .block.head {
-  background-color: #1E90FF; 
+  background-color: rgba(28, 209, 28, 0.9);
 }
 
 .leaderboard {
-  background-color: #f1f1f1;
+  background-color: rgba(39, 181, 39, 0.5);
+  color: white;
   padding: 10px;
   border-radius: 8px;
   margin-top: 8px;
-  max-width: 300px;
-}
+} 
 
 .leaderboard h4 {
   text-align: center;
 }
 
-.b1 {
-  padding: 10px 12px;
-  font-size: 12px;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  background-color: #4CAF50;
-  color: white;
-  cursor: pointer;
-  margin: 3px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
+.btn {
+    border-width: 3px;
+    font-size: 1.3rem;
 }
 
-.b1:hover {
-  background-color: #45a049;
-  transform: scale(1.05);
-}
-
-.b1:active {
-  transform: scale(0.98);
-}
-
-.b2 {
-  padding: 10px 12px;
-  font-size: 12px;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  background-color: #ff0000;
-  color: white;
-  cursor: pointer;
-  margin: 3px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.b2:hover {
-  background-color: #e60000;
-  transform: scale(1.05);
-}
-
-.b2:active {
-  transform: scale(0.98);
-}
-
-.b3 {
-  padding: 10px 12px;
-  font-size: 12px;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  background-color: #0000ff;
-  color: white;
-  cursor: pointer;
-  margin: 3px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.b3:hover {
-  background-color: #0000e6;
-  transform: scale(1.05);
-}
-
-.b3:active {
-  transform: scale(0.98);
-}
-
-.b4 {
-  padding: 10px 12px;
-  font-size: 12px;
-  font-weight: bold;
-  border: none;
-  border-radius: 12px;
-  background-color: #ff6600;
-  color: white;
-  cursor: pointer;
-  margin: 3px;
-  transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.b4:hover {
-  background-color: #e65c00;
-  transform: scale(1.05);
-}
-
-.b4:active {
-  transform: scale(0.98);
+button:hover {
+    transform: scale(1.05);
 }
 
 .message {
+  color: white;
   margin-top: 10x;
   margin-bottom: 0px;
 }
