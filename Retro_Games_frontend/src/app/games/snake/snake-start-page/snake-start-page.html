@@ -1,10 +1,35 @@
-<div class="container">
-  <h1>Snake!</h1>
-  <p>Choose your level:</p>
-  <button (click)="startEasy()">Easy</button>
-  <button (click)="startMedium()">Medium</button>
-  <button (click)="startHard()">Hard</button>
-  <button (click)="startNoWall()">No Wall</button>
-  <button (click)="goToAboutGame()">About the Game</button>
-  <button (click)="goToGames()">Back</button>
+<div class="container-fluid d-flex flex-column justify-content-center start_container">
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h1 class="title fw-bold">Snake!</h1>
+    </div>
+  </div>
+
+  <div class="row mx-md-5">
+    <div class="col-md-4 mb-2 mx-auto text-center">
+      <button class="btn btn-success btn-lg d-block w-100 fw-bold" (click)="startEasy()">Easy</button>
+    </div>
+
+    <div class="col-md-4 mb-2 mx-auto text-center">
+      <button class="btn btn-success btn-lg d-block w-100 fw-bold" (click)="startMedium()">Medium</button>
+    </div>
+
+    <div class="col-md-4 mb-2 mx-auto text-center">
+      <button class="btn btn-success btn-lg d-block w-100 fw-bold" (click)="startHard()">Hard</button>
+    </div>
+  </div>
+
+  <div class="row mx-md-5">
+    <div class="col-md-4 mb-2 mx-auto text-center">
+      <button class="btn btn-success btn-lg d-block w-100 fw-bold" (click)="startNoWall()">No Wall</button>
+    </div>
+
+    <div class="col-md-4 mb-2 mx-auto text-center">
+      <button class="btn btn-warning btn-lg d-block w-100 fw-bold" (click)="goToAboutGame()">About the Game</button>
+    </div>
+
+    <div class="col-md-4 mb-2 mx-auto text-center">
+      <button class="btn btn-danger btn-lg d-block w-100 fw-bold" (click)="goToGames()">Back</button>
+    </div>
+  </div>
 </div>
