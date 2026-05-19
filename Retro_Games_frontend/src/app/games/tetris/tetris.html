@@ -48,7 +48,7 @@
 
               <div class="row mb-1">
                 <div class="col-12">
-                  <button class="btn btn-warning btn-lg d-block w-100 fw-bold" (click)="togglePause()">
+                  <button class="btn btn-warning btn-lg d-block w-100 fw-bold" style="color: white;" (click)="togglePause()">
                     {{ pause ? 'Resume' : 'Pause' }}
                   </button>
                 </div>
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="col-md-5" style="padding: 0 !important;">
+    <div class="col-md-5">
       <div id="game">
         <div class="piece">
           <div *ngFor="let row of arena; let y = index" class="rows">
