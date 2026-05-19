@@ -39,11 +39,11 @@
 
 .next_piece {
     margin: 10px;
-    background-color: #f0f0f0;
+    background-color: #f0f0f050;
 }
 
 .leaderboard {
-  background-color: rgba(39, 181, 39, 0.5);
+  background-color: rgba(20, 20, 20, 0.55);
   color: white;
   padding: 10px;
   border-radius: 8px;

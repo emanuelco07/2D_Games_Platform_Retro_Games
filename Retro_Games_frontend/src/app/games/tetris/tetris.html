@@ -1,7 +1,7 @@
 <div class="container-fluid d-flex flex-column justify-content-center start_container">
   <div class="row">
-    <div class="col-md-3 mx-md-5 p-1 text-start">
-      <div class="row mb-1">
+    <div class="col-md-4 mx-md-5 p-1 text-start">
+      <div class="row mb-1 mx-md-5">
         <div class="col-12 p-1 text-start leaderboard">
           <h4>Leaderboard</h4>
           <ol>
@@ -12,7 +12,7 @@
         </div>
       </div>
 
-      <div class="row">
+      <div class="row mx-md-5">
         <div class="col-12">
           <div class="row mb-1">
             <div class="col-12">
@@ -22,7 +22,7 @@
 
           <div class="row">
             <div class="col-12">
-              <div class="row mb-1">
+              <div class="row mb-1 mx-md-5">
                 <div class="col-12">
                   <button class="btn btn-success btn-lg d-block w-100 fw-bold" (click)="startGame()">
                     {{ playing ? 'Restart' : 'Play again' }}
@@ -30,7 +30,7 @@
                 </div>
               </div>
 
-              <div class="row mb-1">
+              <div class="row mb-1 mx-md-5">
                 <div class="col-12">
                   <button class="btn btn-danger btn-lg d-block w-100 fw-bold" (click)="goToStartPage()">
                     Back
@@ -38,7 +38,7 @@
                 </div>
               </div>
 
-              <div class="row mb-1">
+              <div class="row mb-1 mx-md-5">
                 <div class="col-12">
                   <button class="btn btn-primary btn-lg d-block w-100 fw-bold" (click)="onLogout()">
                     Logout
@@ -46,7 +46,7 @@
                 </div>
               </div>
 
-              <div class="row mb-1">
+              <div class="row mb-1 mx-md-5">
                 <div class="col-12">
                   <button class="btn btn-warning btn-lg d-block w-100 fw-bold" style="color: white;" (click)="togglePause()">
                     {{ pause ? 'Resume' : 'Pause' }}
@@ -54,7 +54,7 @@
                 </div>
               </div>
 
-              <div class="row mb-1">
+              <div class="row mb-1 mx-md-5">
                 <div class="col-12">
                   <h4 style="color: white;">{{message}}</h4>
                 </div>
@@ -65,7 +65,7 @@
       </div>
     </div>
 
-    <div class="col-md-5">
+    <div class="col-lg-5">
       <div id="game">
         <div class="piece">
           <div *ngFor="let row of arena; let y = index" class="rows">
@@ -76,7 +76,7 @@
       </div>
     </div>
 
-    <div class="col-md-3">
+    <div class="col-md-2">
       <div class="next_piece_container">
         <h3 style="color: white;">Next Piece</h3>
         <div class="next_piece">

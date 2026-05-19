@@ -77,14 +77,14 @@ export class Tetris {
   ]
 
   //definim culorile pentru fiecare tip de piesa
-  pieceColors: { [key: string]: string } = {
-    T: 'purple',
-    O: 'yellow',
-    I: 'cyan',
-    S: 'red',
-    Z: 'green',
-    L: 'orange',
-    J: 'hotpink'
+  pieceColors = {
+    T: '#FF00FF',   // magenta neon pur
+    O: '#FFFF00',   // galben fosforescent
+    I: '#00FFFF',   // cyan neon pur
+    S: '#FF0033',   // roșu neon electric
+    Z: '#00FF33',   // verde neon fosforescent
+    L: '#FF6600',   // portocaliu neon aprins
+    J: '#FF1493'    // roz neon intens (deep pink)
   };
 
   //piesa curenta
@@ -167,7 +167,7 @@ export class Tetris {
 
   startInterval() {
 
-    if(this.intervalId !== undefined)
+    if (this.intervalId !== undefined)
       clearInterval(this.intervalId);
 
     this.intervalId = setInterval(() => {
@@ -210,7 +210,7 @@ export class Tetris {
   //functie pentru a asculta evenimentele de la tastatura
   @HostListener('document:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if(this.pause || !this.playing) return; //blocam apasarea pe taste daca jocul e pe pauza sau oprit
+    if (this.pause || !this.playing) return; //blocam apasarea pe taste daca jocul e pe pauza sau oprit
 
     //blocam scroll-ul paginii cand apasam pe sageti
     if (
@@ -652,13 +652,12 @@ export class Tetris {
   }
 
   //functie pentru a pune jocul pe pauza
-  togglePause()
-  {
+  togglePause() {
     if (!this.playing) return; //daca jocul s-a terminat nu facem nimic
 
     this.pause = !this.pause; //schimbam valoarea variabilei in functie de apasarea butonului
 
-    if(this.pause)
+    if (this.pause)
       clearInterval(this.intervalId); //oprim coborarea piesei
     else
       this.startInterval() //reluam jocul
