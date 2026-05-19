@@ -9,9 +9,9 @@
 
 #game {
     width: 400px;
-    height: 800px;
+    height: 805px;
     border: 3px solid #000;
-    background-color: #f0f0f0;
+    background-color: #f0f0f050;
     position: relative;
 }
 
@@ -26,7 +26,7 @@
     padding: 10px;
 }
 
-.row {
+.rows {
     display: flex;
 }
 
@@ -39,6 +39,7 @@
 
 .next_piece {
     margin: 10px;
+    background-color: #f0f0f0;
 }
 
 .leaderboard {
@@ -51,13 +52,6 @@
 
 .leaderboard h4 {
   text-align: center;
-}
-
-.menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
 }
 
 .btn {
