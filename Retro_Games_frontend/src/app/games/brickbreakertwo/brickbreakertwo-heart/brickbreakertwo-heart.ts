@@ -62,10 +62,10 @@ export class BrickbreakertwoHeart {
 
   //definim culorile pentru fiecare piesa
   pieceColor: { [key: string]: string} = {
-    Paddle: '#a86cf5',
-    Ball: '#40e0d0',
-    Bricks: '#ff6fa1',
-    Life: 'red'
+    Paddle: '#00eaff',
+    Ball: '#ff2ec4',
+    Bricks: '#1552d1',
+    Life: '#ff3b3b'
   };
 
   playing = false; //variabila care ne ajuta sa stim daca jocul este in desfasurare sau nu
