@@ -45,9 +45,9 @@ export class Superbricks {
 
   //definim culorile pentru fiecare piesa
   pieceColor: { [key: string]: string} = {
-    Life: 'red',
-    Rocket: 'blue',
-    Walls: 'grey'
+    Life: '#ff2e2e',
+    Rocket: '#005eff',
+    Walls: '#9ea7b3'
   };
 
   playing = false; //variabila care ne ajuta sa stim daca jocul este in desfasurare sau nu

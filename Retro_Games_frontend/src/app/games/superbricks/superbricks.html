@@ -1,54 +1,93 @@
-<main>
-  <div class="container">
-    <div class="menu">
-      <div class="leaderboard">
-        <h4>Leaderboard</h4>
-        <ol>
-          <li *ngFor="let user of leaderboard"> 
-            {{ user.username }} — {{ user.highScore }}
-          </li>
-        </ol>
+<div class="container-fluid d-flex flex-column justify-content-center start_container">
+  <div class="row">
+    <div class="col-md-4 mx-md-5 p-1 text-start">
+      <div class="row mb-1 mx-md-5">
+        <div class="col-12 p-1 text-start leaderboard">
+          <h4>Leaderboard</h4>
+          <ol>
+            <li *ngFor="let user of leaderboard">
+              {{ user.username }} — {{ user.highScore }}
+            </li>
+          </ol>
+        </div>
       </div>
-      <h4 class="message">Good luck, {{username}}! </h4>
-      <p>
-        <button class="b1" (click)="startGame()">
-          {{ playing ? 'Restart' : 'Play again' }} 
-        </button>
 
-        <button class="b2" (click)="goToStartPage()">
-          Back
-        </button>
+      <div class="row mx-md-5">
+        <div class="col-12">
+          <div class="row mb-1 mx-md-4">
+            <div class="col-12">
+              <h5 class="message">Good luck, {{username}}! Score: {{ points }}!</h5>
+            </div>
+          </div>
 
-        <button class="b3" (click)="onLogout()">
-          Logout
-        </button>
+          <div class="row">
+            <div class="col-12">
+              <div class="row mb-1 mx-md-4">
+                <div class="col-12">
+                  <button class="btn btn-success btn-lg d-block w-100 fw-bold" (click)="startGame()">
+                    {{ playing ? 'Restart' : 'Play again' }}
+                  </button>
+                </div>
+              </div>
 
-        <button class="b4" (click)="togglePause()">
-          {{ pause ? 'Resume' : 'Pause' }}
-        </button>
-      </p>
-    </div>
+              <div class="row mb-1 mx-md-4">
+                <div class="col-12">
+                  <button class="btn btn-danger btn-lg d-block w-100 fw-bold" (click)="goToStartPage()">
+                    Back
+                  </button>
+                </div>
+              </div>
 
-    <div id="game">
-      <div class="piece">
-        <div *ngFor="let row of arena; let y = index" class="row">
-          <div *ngFor="let cell of row; let x = index" class="cell" [ngStyle]="{ 'background': getCellColor(x, y) }">
+              <div class="row mb-1 mx-md-4">
+                <div class="col-12">
+                  <button class="btn btn-primary btn-lg d-block w-100 fw-bold" (click)="onLogout()">
+                    Logout
+                  </button>
+                </div>
+              </div>
+
+              <div class="row mb-1 mx-md-4">
+                <div class="col-12">
+                  <button class="btn btn-warning btn-lg d-block w-100 fw-bold" style="color: white;"
+                    (click)="togglePause()">
+                    {{ pause ? 'Resume' : 'Pause' }}
+                  </button>
+                </div>
+              </div>
+
+              <div class="row mb-1 mx-md-4">
+                <div class="col-12">
+                  <h4 style="color: white;">{{message}}</h4>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
 
-    <div class="next_piece_container">
-      <h3>Life</h3>
-      <div class="next_piece">
-        <div *ngFor="let row of lifeArena; let y = index" class="row">
-          <div *ngFor="let cell of row; let x = index" class="cell"
-            [ngStyle]="{ 'background': getLifeArenaColor(x, y) }"></div>
+    <div class="col-lg-5">
+      <div id="game">
+        <div class="piece">
+          <div *ngFor="let row of arena; let y = index" class="rows">
+            <div *ngFor="let cell of row; let x = index" class="cell" [ngStyle]="{ 'background': getCellColor(x, y) }">
+            </div>
+          </div>
         </div>
       </div>
-      <h3>Score: {{ points }}! Level: {{ level }}!</h3>
-      <h3>{{message}}</h3>
     </div>
 
+    <div class="col-md-2">
+      <div class="next_piece_container">
+        <h3 style="color: white">Life</h3>
+        <div class="next_piece">
+          <div *ngFor="let row of lifeArena; let y = index" class="rows">
+            <div *ngFor="let cell of row; let x = index" class="cell"
+              [ngStyle]="{ 'background': getLifeArenaColor(x, y) }">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
-</main>
+</div>
