@@ -1,7 +1,7 @@
 .start_container {
     height: 100vh;
     /* pentru a ocupa tot ecranul */
-    background-image: url('/images/goalscorer_background.jpg');
+    background-image: url('/images/superbricks_background.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -19,15 +19,15 @@ button:hover {
 .title {
     font-size: 5rem;
     margin-bottom: 1rem;
-    color: #ffdd55;
+    color: #2ab8ff;
     text-shadow:
-        0 0 10px #ffdd55,
-        0 0 20px rgba(255, 221, 85, 0.6);
+        0 0 10px #2ab8ff,
+        0 0 20px rgba(42, 184, 255, 0.6);
 }
 
 .title:hover {
-    color: #00eaff;
+    color: #ff8c00;
     text-shadow:
-        0 0 10px #00eaff,
-        0 0 20px rgba(0, 234, 255, 0.6);
+        0 0 10px #ff8c00,
+        0 0 20px rgba(255, 140, 0, 0.7);
 }
