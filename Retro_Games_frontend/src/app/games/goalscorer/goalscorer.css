@@ -1,24 +1,17 @@
-main {
+.start_container {
     height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0px;
-    padding: 0px;
-}
-
-.container {
-    display: flex;
-    flex-direction: row;
-    gap: 40px;
-    align-items: center;
+    /* pentru a ocupa tot ecranul */
+    background-image: url('/images/goalscorer_background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #game {
     width: 400px;
-    height: 800px;
+    height: 805px;
     border: 3px solid #000;
-    background-color: #f0f0f0;
+    background-color: #f0f0f050;
     position: relative;
 }
 
@@ -33,7 +26,7 @@ main {
     padding: 10px;
 }
 
-.row {
+.rows {
     display: flex;
 }
 
@@ -46,111 +39,32 @@ main {
 
 .next_piece {
     margin: 10px;
+    background-color: #f0f0f050;
 }
 
 .leaderboard {
-    background-color: #f1f1f1;
-    padding: 10px;
-    border-radius: 8px;
-    margin-top: 8px;
-    max-width: 300px;
-}
+  background-color: rgba(20, 20, 20, 0.55);
+  color: white;
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 8px;
+} 
 
 .leaderboard h4 {
-    text-align: center;
+  text-align: center;
 }
 
-.menu {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 10px;
+.btn {
+    border-width: 3px;
+    font-size: 1.3rem;
 }
 
-.b1 {
-    padding: 10px 12px;
-    font-size: 12px;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    background-color: #4CAF50;
-    color: white;
-    cursor: pointer;
-    margin: 3px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.b1:hover {
-    background-color: #45a049;
+button:hover {
     transform: scale(1.05);
 }
 
-.b1:active {
-    transform: scale(0.98);
-}
-
-.b2 {
-    padding: 10px 12px;
-    font-size: 12px;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    background-color: #ff0000;
-    color: white;
-    cursor: pointer;
-    margin: 3px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.b2:hover {
-    background-color: #e60000;
-    transform: scale(1.05);
-}
-
-.b2:active {
-    transform: scale(0.98);
-}
-
-.b3 {
-    padding: 10px 12px;
-    font-size: 12px;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    background-color: #0000ff;
-    color: white;
-    cursor: pointer;
-    margin: 3px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.b3:hover {
-    background-color: #0000e6;
-    transform: scale(1.05);
-}
-
-.b3:active {
-    transform: scale(0.98);
-}
-
-.b4 {
-    padding: 10px 12px;
-    font-size: 12px;
-    font-weight: bold;
-    border: none;
-    border-radius: 12px;
-    background-color: #ff6600;
-    color: white;
-    cursor: pointer;
-    margin: 3px;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.b4:hover {
-    background-color: #e65c00;
-    transform: scale(1.05);
-}
-
-.b4:active {
-    transform: scale(0.98);
+.message {
+  color: white;
+  margin-top: 10x;
+  margin-bottom: 0px;
 }

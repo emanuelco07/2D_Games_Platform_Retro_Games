@@ -71,11 +71,11 @@ export class Goalscorer {
 
   //definim culorile pentru fiecare piesa
   pieceColor: { [key: string]: string} = {
-    Scorer: 'yellow',
-    Goalkeeper: '#32CD32',
-    Ball: 'gray',
-    Walls: 'blue',
-    Life: 'red'
+    Scorer: '#00ffe1',
+    Goalkeeper: '#ffdd00',
+    Ball: '#000000',
+    Walls: '#ffffff',
+    Life: '#ff0055'
   };
 
   playing = false; //variabila care ne ajuta sa stim daca jocul este in desfasurare sau nu
