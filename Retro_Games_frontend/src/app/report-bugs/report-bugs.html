@@ -1,18 +1,27 @@
-<main>
-    <h1 class="title">Report Bugs</h1>
-    <div class="chat_container">
-        <form [formGroup]="bugForm" (ngSubmit)="sendMessage()" class="chat_form">
-            <input
-                type="text"
-                formControlName="description"
-                placeholder="Scrie un mesaj..."
-                class="chat_input"
-            />
-            <button type="submit" [disabled]="bugForm.invalid" class="chat_button">Trimite</button>
-        </form>
+<div class="container-fluid d-flex flex-column justify-content-center start_container">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h1 class="title fw-bold">Report Bugs</h1>
+        </div>
     </div>
 
-    <button class="b2" (click)="goToGamesPage()">
-        Back
-    </button>
-</main>
+    <div class="row mx-md-5">
+        <div class="col-md-8 mb-2 mx-auto text-left">
+            <div class="chat_container">
+                <form [formGroup]="bugForm" (ngSubmit)="sendMessage()" class="chat_form">
+                    <input type="text" formControlName="description" placeholder="Scrie un mesaj..."
+                        class="chat_input" />
+                    <button type="submit" [disabled]="bugForm.invalid" class="chat_button">Trimite</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="row mx-md-5 justify-content-center">
+        <div class="col-md-4">
+            <button class="btn btn-danger btn-lg d-block w-100 fw-bold" (click)="goToGamesPage()">
+                Back
+            </button>
+        </div>
+    </div>
+</div>
