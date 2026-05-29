@@ -42,6 +42,9 @@ public class AuthController : ControllerBase //Mosteneste din ControllerBase
         //hash-uim parrola
         user.Password = BCrypt.Net.BCrypt.HashPassword(user.Password);
 
+        //adaugam data si ora iregistrarii
+        user.RegistrationDate = DateTime.Now;
+        
         //adaugam utilizatorul in baza de date
         _context.Users.Add(user);
         await _context.SaveChangesAsync(); //salvam modificarile in baza de date (executam insert)
