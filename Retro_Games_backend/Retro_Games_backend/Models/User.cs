@@ -22,9 +22,6 @@ public class User
 
     public DateTime RegistrationDate { get; set; }
 
-    [MaxLength(70)] public string? Email { get; set; } //?-inseamna ca poate avea valori null, poate fi null
-    //am adaugat datele de mai sus pentru a testa ce se intampla cand modific tabela si realizez alta migratie
-
     public ICollection<UserGameScore>? UserGameScores { get; set; } = new List<UserGameScore>();
     //permite sa vezi scourile inregistrate pentru orice joc
 
