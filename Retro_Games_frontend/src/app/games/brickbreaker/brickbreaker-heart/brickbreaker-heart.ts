@@ -31,12 +31,12 @@ const CURRENT_GAME_NAME = "Brick Breaker"; //numele jocului
 export class BrickbreakerHeart {
 
   arena: (string | 0)[][] = []; //memoram 0 cand celula e goala sau culoarea cand nu e goala
-  lifeArena: (string | 0) [][] = []; //o folosim pentru a arata utilizatorului cate vieti mai are, memoram 0 cand e goala, sau o 
-                                      //culoare cand o celula e ocupata
+  lifeArena: (string | 0)[][] = []; //o folosim pentru a arata utilizatorului cate vieti mai are, memoram 0 cand e goala, sau o 
+  //culoare cand o celula e ocupata
 
   Life_piece: number[][] = [
     [1, 1, 1, 1]
-  ]                              
+  ]
 
   Paddle_piece: number[][] = [
     [1, 1, 1, 1]
@@ -57,7 +57,7 @@ export class BrickbreakerHeart {
   ]
 
   //definim culorile pentru fiecare piesa
-  pieceColor: { [key: string]: string} = {
+  pieceColor: { [key: string]: string } = {
     Paddle: '#00eaff',
     Ball: '#ff2ec4',
     Bricks: '#1552d1',
@@ -77,10 +77,10 @@ export class BrickbreakerHeart {
   highscore = 0; //highscore ul curent al utilizatorului conectat
   leaderboard: { username: string, highScore: number }[] = []; //un array pentru a memora leaderboard ul
 
-  PaddlePosition: { x: number, y: number } = {x: 3, y: 19}; //pozitia initiala a paddle ului
-  BricksPosition: { x: number, y: number } = {x: 0, y: 0}; //pozitia initiala a brick urilor
-  BallPosition: { x: number, y: number } = {x: 4, y: 18}; //pozitia initiala a bilei
-  LifePosition: { x: number, y: number } = {x: 0, y: 0}; //pozitia initiala a vietilor
+  PaddlePosition: { x: number, y: number } = { x: 3, y: 19 }; //pozitia initiala a paddle ului
+  BricksPosition: { x: number, y: number } = { x: 0, y: 0 }; //pozitia initiala a brick urilor
+  BallPosition: { x: number, y: number } = { x: 4, y: 18 }; //pozitia initiala a bilei
+  LifePosition: { x: number, y: number } = { x: 0, y: 0 }; //pozitia initiala a vietilor
 
   intervalId: number | undefined; //folosit pentru a reseta intervalul cand e nevoie
 
@@ -119,22 +119,22 @@ export class BrickbreakerHeart {
 
   startInterval() {
 
-    if(this.intervalId !== undefined)
+    if (this.intervalId !== undefined)
       clearInterval(this.intervalId);
-    
+
     this.intervalId = setInterval(() => {
 
-      if(this.gameOver()) return; //daca jocul s-a terminat nu facem nimic
-      if(this.gameWon()) return; //daca jocul s-a castigat, nu facem nimic
+      if (this.gameOver()) return; //daca jocul s-a terminat nu facem nimic
+      if (this.gameWon()) return; //daca jocul s-a castigat, nu facem nimic
 
       if (!this.playing || !this.spaceStart)
         return; //daca jocul nu este in desfasurare sau daca nu s-a apasat tasta space oprim intervalul
-  
+
       this.checkWall(); //verificam coliziunile bilei cu brick urile
       this.direction = this.checkBallCollision(); //verificam coliziunile bilei cu zidurile si paddle ul
 
       //punem acest if aici pentru ca atunci cand bila pica si ii resetam pozitia, aceasta se mai misca o data (un frame)
-      if(this.spaceStart) //daca s a apasat tasta space, bila se poate misca
+      if (this.spaceStart) //daca s a apasat tasta space, bila se poate misca
         //schimbam pozitia de miscare a bilei
         switch (this.direction) {
           case Direction.NorthEast:
@@ -149,15 +149,15 @@ export class BrickbreakerHeart {
           case Direction.SouthWest:
             this.moveBallSouthWest();
             break;
-      }
-      
+        }
+
     }, this.time);
   }
 
   //functie pentru a asculta evenimentele de la tastatura
   @HostListener('document:keydown', ['$event'])
   keyEvent(event: KeyboardEvent) {
-    if(this.pause || !this.playing) return; //blocam apasarea pe taste daca jocul e pe pauza sau oprit
+    if (this.pause || !this.playing) return; //blocam apasarea pe taste daca jocul e pe pauza sau oprit
 
     //prevenim scroll ul paginii cand apasam pe sageti sau space
     if (
@@ -169,57 +169,57 @@ export class BrickbreakerHeart {
     ) {
       event.preventDefault();
     }
-    
+
     //putem muta paddle ul stanga dreapta, iar cand apasam space, bila se va misca mai repede
-    if(this.gameWon()) return; //daca jocul s-a castigat, nu facem nimic
-    if(this.gameOver()) return; //daca jocul s-a terminat nu facem nimic
-      switch (event.code) {
-        case KEY_CODE.LEFT_ARROW:
-          this.movePaddleLeft();
-          break;
-        case KEY_CODE.RIGHT_ARROW:
-          this.movePaddleRight();
-          break;
-        case KEY_CODE.SPACE:
-          if(this.gameWon()) return; //daca jocul s-a castigat, nu facem nimic
-          if(this.gameOver()) return; //daca jocul s-a terminat nu facem nimic
-          if(!this.spaceStart) //daca nu s a apasat tasta space pana acum, o setam la true
-          {
-            this.message = ''; //resetam mesajul
-            this.startInterval(); //pornim intervalul (jocul incepe)
-            this.spaceStart = true; //pentru a putea incepe jocul
-          }
-          else //daca s a apasat deja tasta space, miscam bila mai repede
-            this.moveBallFaster();
-          break;
-      }
+    if (this.gameWon()) return; //daca jocul s-a castigat, nu facem nimic
+    if (this.gameOver()) return; //daca jocul s-a terminat nu facem nimic
+    switch (event.code) {
+      case KEY_CODE.LEFT_ARROW:
+        this.movePaddleLeft();
+        break;
+      case KEY_CODE.RIGHT_ARROW:
+        this.movePaddleRight();
+        break;
+      case KEY_CODE.SPACE:
+        if (this.gameWon()) return; //daca jocul s-a castigat, nu facem nimic
+        if (this.gameOver()) return; //daca jocul s-a terminat nu facem nimic
+        if (!this.spaceStart) //daca nu s a apasat tasta space pana acum, o setam la true
+        {
+          this.message = ''; //resetam mesajul
+          this.startInterval(); //pornim intervalul (jocul incepe)
+          this.spaceStart = true; //pentru a putea incepe jocul
+        }
+        else //daca s a apasat deja tasta space, miscam bila mai repede
+          this.moveBallFaster();
+        break;
+    }
   }
 
   //functie pentru a verifica coliziunile bilei cu peretii si paddle ul
   checkBallCollision() {
-    if(this.BallPosition.x === 0){ //verificam coliziunea cu zidul din stanga
-      if(this.BallGoingUp === true) 
+    if (this.BallPosition.x === 0) { //verificam coliziunea cu zidul din stanga
+      if (this.BallGoingUp === true)
         return Direction.NorthEast;
-      else 
+      else
         return Direction.SouthEast;
     }
-    else if(this.BallPosition.x === 9) { //verificam coliziunea cu zidul din dreapta
-      if(this.BallGoingUp === true) 
+    else if (this.BallPosition.x === 9) { //verificam coliziunea cu zidul din dreapta
+      if (this.BallGoingUp === true)
         return Direction.NorthWest;
-      else 
+      else
         return Direction.SouthWest;
     }
-    else if(this.BallPosition.y === 0) //verificam coliziunea cu zidul de sus
+    else if (this.BallPosition.y === 0) //verificam coliziunea cu zidul de sus
     {
       this.BallGoingUp = false;
-      if(this.direction === Direction.NorthEast)
+      if (this.direction === Direction.NorthEast)
         return Direction.SouthEast;
-      else if(this.direction === Direction.NorthWest)
+      else if (this.direction === Direction.NorthWest)
         return Direction.SouthWest;
-    } 
-    else if(this.BallPosition.y + 1 === this.PaddlePosition.y) //verificam coliziunea cu paddle ul (pe axa y)
+    }
+    else if (this.BallPosition.y + 1 === this.PaddlePosition.y) //verificam coliziunea cu paddle ul (pe axa y)
     {
-      if(
+      if (
         this.BallPosition.x === this.PaddlePosition.x - 1 || //adaugam -1 pentru a putea prinde bila si cand loveste coltul din stanga
         this.BallPosition.x === this.PaddlePosition.x ||
         this.BallPosition.x === this.PaddlePosition.x + 1 ||
@@ -229,24 +229,23 @@ export class BrickbreakerHeart {
       ) //verificam conexiunea cu paddle ul pe axa x
       {
         this.BallGoingUp = true;
-        if(this.direction === Direction.SouthEast)
+        if (this.direction === Direction.SouthEast)
           return Direction.NorthEast;
-        else if(this.direction === Direction.SouthWest)
+        else if (this.direction === Direction.SouthWest)
           return Direction.NorthWest;
       }
-    } 
-    else if(this.BallPosition.y > 19 || this.BallPosition.x > 9 || this.BallPosition.x < 0) //daca bila iese in afara grid ului in partea de jos (trece pe langa scorer)
-                                                              //sau bila iese in partea dreapta a gridului sau in partea stanga (rezolvare bug uri)
+    }
+    else if (this.BallPosition.y > 19 || this.BallPosition.x > 9 || this.BallPosition.x < 0) //daca bila iese in afara grid ului in partea de jos (trece pe langa scorer)
+    //sau bila iese in partea dreapta a gridului sau in partea stanga (rezolvare bug uri)
     {
       //scadem din viata
       let position = -1;
-      for(let i = 0; i < 4; i++)
-        if(this.Life_piece[0][i] === 1)
+      for (let i = 0; i < 4; i++)
+        if (this.Life_piece[0][i] === 1)
           position = i;
-      
+
       //daca nu mai avem ce scadea din viata, jocul este incheiat
-      if(position === 0)
-      {
+      if (position === 0) {
         //aici vom pierde jocul
         this.Life_piece[0][position] = 0;
         this.gameOver();
@@ -284,7 +283,7 @@ export class BrickbreakerHeart {
           const brickY = this.BricksPosition.y + i;
 
           // --- COLIZIUNI ---
-          
+
           //1. Coliziune directa (bila loveste direct centrul caramizii)
           if (this.BallPosition.x === brickX && this.BallPosition.y === brickY) {
             this.destroyBrick(i, j);
@@ -373,16 +372,15 @@ export class BrickbreakerHeart {
   //functie pentru a muta paddle ul la stanga
   movePaddleLeft() {
     //verificam daca paddle ul nu depaseste limita stanga
-    if(this.PaddlePosition.x > 0)
-    {
+    if (this.PaddlePosition.x > 0) {
       this.PaddlePosition.x--;
-      if(this.BallPosition.y + 1 === this.PaddlePosition.y && 
+      if (this.BallPosition.y + 1 === this.PaddlePosition.y &&
         (this.BallPosition.x === this.PaddlePosition.x - 1 ||
-        this.BallPosition.x === this.PaddlePosition.x ||
-        this.BallPosition.x === this.PaddlePosition.x + 1 ||
-        this.BallPosition.x === this.PaddlePosition.x + 2 ||
-        this.BallPosition.x === this.PaddlePosition.x + 3 ||
-        this.BallPosition.x === this.PaddlePosition.x + 4
+          this.BallPosition.x === this.PaddlePosition.x ||
+          this.BallPosition.x === this.PaddlePosition.x + 1 ||
+          this.BallPosition.x === this.PaddlePosition.x + 2 ||
+          this.BallPosition.x === this.PaddlePosition.x + 3 ||
+          this.BallPosition.x === this.PaddlePosition.x + 4
         )) {
         this.moveBallWest(); //daca bila este pe paddle, o miscam si pe ea
       }
@@ -393,16 +391,15 @@ export class BrickbreakerHeart {
 
   //functie pentru a muta paddle ul la dreapta
   movePaddleRight() {
-    if(this.PaddlePosition.x + 3 < 9)
-    {
+    if (this.PaddlePosition.x + 3 < 9) {
       this.PaddlePosition.x++;
-      if(this.BallPosition.y + 1 === this.PaddlePosition.y && 
+      if (this.BallPosition.y + 1 === this.PaddlePosition.y &&
         (this.BallPosition.x === this.PaddlePosition.x - 1 ||
-        this.BallPosition.x === this.PaddlePosition.x ||
-        this.BallPosition.x === this.PaddlePosition.x + 1 ||
-        this.BallPosition.x === this.PaddlePosition.x + 2 ||
-        this.BallPosition.x === this.PaddlePosition.x + 3 ||
-        this.BallPosition.x === this.PaddlePosition.x + 4
+          this.BallPosition.x === this.PaddlePosition.x ||
+          this.BallPosition.x === this.PaddlePosition.x + 1 ||
+          this.BallPosition.x === this.PaddlePosition.x + 2 ||
+          this.BallPosition.x === this.PaddlePosition.x + 3 ||
+          this.BallPosition.x === this.PaddlePosition.x + 4
         )) {
         this.moveBallEast(); //daca bila este pe paddle, o miscam si pe ea
       }
@@ -496,7 +493,7 @@ export class BrickbreakerHeart {
 
     return '';
   }
-  
+
   //functie pentru a (re)incepe jocul
   startGame() {
     //inializam arena cu 20 de linii si 10 coloane, puse pe 0
@@ -522,13 +519,19 @@ export class BrickbreakerHeart {
     this.LifePosition.x = 0, this.LifePosition.y = 0; //pozitia initiala a vietilor
 
     //resetam brick urile
-    for(let i = 0; i < this.Bricks_piece.length; i++)
-      for(let j = 0; j < this.Bricks_piece[i].length; j++)
-        this.Bricks_piece[i][j] = 1;
+    this.Bricks_piece = [
+      [0, 1, 1, 0, 0, 0, 1, 1, 0, 0],
+      [1, 1, 1, 1, 0, 1, 1, 1, 1, 0],
+      [1, 1, 1, 1, 1, 1, 1, 1, 1, 0],
+      [0, 1, 1, 1, 1, 1, 1, 1, 0, 0],
+      [0, 0, 1, 1, 1, 1, 1, 0, 0, 0],
+      [0, 0, 0, 1, 1, 1, 0, 0, 0, 0],
+      [0, 0, 0, 0, 1, 0, 0, 0, 0, 0]
+    ]
 
     //resetam vietile
-    for(let i = 0; i < this.Life_piece.length; i++)
-      for(let j = 0; j < this.Life_piece[i].length; j++)
+    for (let i = 0; i < this.Life_piece.length; i++)
+      for (let j = 0; j < this.Life_piece[i].length; j++)
         this.Life_piece[i][j] = 1;
 
     this.time = 400; //resetam timpul intervalului
@@ -562,7 +565,7 @@ export class BrickbreakerHeart {
 
     this.pause = !this.pause; //schimbam valoarea variabilei in functie de apasarea butonului
 
-    if(this.pause)
+    if (this.pause)
       clearInterval(this.intervalId); //oprim coborarea piesei
     else
       this.startInterval() //reluam jocul
@@ -570,7 +573,7 @@ export class BrickbreakerHeart {
 
   //functie pentru a verifica daca jocul s a terminat
   gameOver() {
-    if(this.Life_piece[0][0] === 0) //daca nu mai avem vieti, jocul este incheiat
+    if (this.Life_piece[0][0] === 0) //daca nu mai avem vieti, jocul este incheiat
     {
       this.finalGameMessage(); //apelam functia pentru a verifica si actualiza scorul
       return true; //jocul este incheiat
@@ -582,16 +585,14 @@ export class BrickbreakerHeart {
   //functie pentru a verifica daca jocul a fost castigat
   gameWon() {
     let allBricksDestroyed = true;
-    for(let i = 0; i < this.Bricks_piece.length; i++)
-      for(let j = 0; j < this.Bricks_piece[i].length; j++)
-        if(this.Bricks_piece[i][j] !== 0)
-        {
+    for (let i = 0; i < this.Bricks_piece.length; i++)
+      for (let j = 0; j < this.Bricks_piece[i].length; j++)
+        if (this.Bricks_piece[i][j] !== 0) {
           allBricksDestroyed = false; //daca macar un brick nu este distrus, jocul nu este castigat
           break;
         }
 
-    if(allBricksDestroyed)
-    {
+    if (allBricksDestroyed) {
       this.message = 'You won!'; //afisam mesajul de castig
       this.finalGameMessage(); //apelam functia pentru a verifica si actualiza scorul
       return true; //jocul este castigat
@@ -605,9 +606,9 @@ export class BrickbreakerHeart {
     if (this.points > this.highscore) {
       this.scoreService.updateHighScore(this.points, CURRENT_GAME_NAME).subscribe(() => {
         this.highscore = this.points;
-          alert('Felicitări! Ai un nou highscore!');
+        alert('Felicitări! Ai un nou highscore!');
       }, () => {
-          alert('Eroare la salvarea scorului.');
+        alert('Eroare la salvarea scorului.');
       });
     }
   }
