@@ -59,7 +59,7 @@ export class Goalscorer {
   ]
 
   Goalkeeper_Piece: number[][] = [
-    [1, 1, 1]
+    [1, 1]
   ]
 
   LifePosition: { x: number, y: number } = {x: 0, y: 0}; //pozitia de start a vietii
@@ -566,8 +566,8 @@ export class Goalscorer {
           this.Ball_Position.x === this.Goalkeeper_Position.x - 1 || //adaugam -1 pentru a putea prinde bila si cand loveste coltul din stanga
           this.Ball_Position.x === this.Goalkeeper_Position.x ||
           this.Ball_Position.x === this.Goalkeeper_Position.x + 1 ||
-          this.Ball_Position.x === this.Goalkeeper_Position.x + 2 ||
-          this.Ball_Position.x === this.Goalkeeper_Position.x + 3 //adaugam +3 pentru a putea prinde bila si cand loveste coltul din dreapta
+          this.Ball_Position.x === this.Goalkeeper_Position.x + 2 //||
+          //this.Ball_Position.x === this.Goalkeeper_Position.x + 3 //adaugam +3 pentru a putea prinde bila si cand loveste coltul din dreapta
         ) //verificam conexiunea cu portarul pe axa x
         {
           this.BallGoingUp = false;
@@ -738,10 +738,10 @@ export class Goalscorer {
     return this.direction;
   }
 
-  //functie pentru a misca portarul in intervalul [3, 7]
+  //functie pentru a misca portarul in intervalul [3, 8]
   moveGoalkeeper() {
     if (this.moveToRight) {
-      if (this.Goalkeeper_Position.x >= 5) {
+      if (this.Goalkeeper_Position.x >= 6) {
         this.moveToRight = false;
         this.Goalkeeper_Position.x--;
       } else {
