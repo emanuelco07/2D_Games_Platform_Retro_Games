@@ -566,8 +566,7 @@ export class Goalscorer {
           this.Ball_Position.x === this.Goalkeeper_Position.x - 1 || //adaugam -1 pentru a putea prinde bila si cand loveste coltul din stanga
           this.Ball_Position.x === this.Goalkeeper_Position.x ||
           this.Ball_Position.x === this.Goalkeeper_Position.x + 1 ||
-          this.Ball_Position.x === this.Goalkeeper_Position.x + 2 //||
-          //this.Ball_Position.x === this.Goalkeeper_Position.x + 3 //adaugam +3 pentru a putea prinde bila si cand loveste coltul din dreapta
+          this.Ball_Position.x === this.Goalkeeper_Position.x + 2 //adaugam +2 pentru a putea prinde bila si cand loveste coltul din dreapta
         ) //verificam conexiunea cu portarul pe axa x
         {
           this.BallGoingUp = false;
@@ -606,8 +605,7 @@ export class Goalscorer {
           this.Ball_Position.x === this.Goalkeeper_Position.x - 1 || //adaugam -1 pentru a putea prinde bila si cand loveste coltul din stanga
           this.Ball_Position.x === this.Goalkeeper_Position.x ||
           this.Ball_Position.x === this.Goalkeeper_Position.x + 1 ||
-          this.Ball_Position.x === this.Goalkeeper_Position.x + 2 ||
-          this.Ball_Position.x === this.Goalkeeper_Position.x + 3 //adaugam +3 pentru a putea prinde bila si cand loveste coltul din dreapta
+          this.Ball_Position.x === this.Goalkeeper_Position.x + 2  //adaugam +2 pentru a putea prinde bila si cand loveste coltul din dreapta
         ) //verificam conexiunea cu portarul pe axa x
         {
           this.BallGoingUp = true;
