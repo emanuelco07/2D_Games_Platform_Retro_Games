@@ -588,7 +588,7 @@ export class Goalscorer {
       }
 
       //verificam coliziunea cu portarul daca mingea loveste in dreapta lateral
-      if(this.Ball_Position.y === this.Goalkeeper_Position.y && this.Ball_Position.x === this.Goalkeeper_Position.x + 3)
+      if(this.Ball_Position.y === this.Goalkeeper_Position.y && this.Ball_Position.x === this.Goalkeeper_Position.x + 2)
       {
         this.BallGoingUp = true;
         if(this.direction === Direction.NorthEast)
@@ -627,7 +627,7 @@ export class Goalscorer {
       }
 
       //verificam coliziunea cu portarul daca mingea loveste in dreapta lateral
-      if(this.Ball_Position.y === this.Goalkeeper_Position.y && this.Ball_Position.x === this.Goalkeeper_Position.x + 3)
+      if(this.Ball_Position.y === this.Goalkeeper_Position.y && this.Ball_Position.x === this.Goalkeeper_Position.x + 2)
       {
         this.BallGoingUp = false;
         if(this.direction === Direction.SouthEast)
