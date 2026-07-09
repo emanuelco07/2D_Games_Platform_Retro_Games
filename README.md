@@ -47,7 +47,7 @@ C# powers the server-side logic, handling:
 - Chat message storage  
 - Bug reporting  
 
-> *“Validarea datelor la înregistrare, criptarea parolei și expirarea tokenului după 2 ore.”*  
+> *“The system performs input validation during user registration, securely hashes passwords, and issues authentication tokens that expire after 2 hours.”*  
 > — *Licență Retro Games, p.25*
 
 ### **Database — MySQL**
@@ -147,7 +147,7 @@ The platform includes the following entities:
 - **Chat** — messages + timestamps  
 - **Bug** — bug reports  
 
-> *“Structura principală a claselor și relațiile dintre entități.”*  
+> *“The main class structure and the relationships between the entities.”*  
 > — *Licență Retro Games, p.11*
 
 ---
