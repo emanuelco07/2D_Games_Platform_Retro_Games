@@ -13,7 +13,7 @@ The project blends nostalgia with current technologies, offering a clean interfa
 ## 📸 Application Preview (GIF Placeholder)
 
 👉 **Insert your main application GIF here**  
-`![Retro Games Preview](main/Prezentarea%20aplicatiei.gif)`  
+`![Retro Games Preview](Prezentarea%20aplicatiei.gif)`  
 
 ---
 
