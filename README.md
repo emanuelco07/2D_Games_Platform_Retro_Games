@@ -12,7 +12,6 @@ The project blends nostalgia with current technologies, offering a clean interfa
 
 ## 📸 Application Preview (GIF Placeholder)
 
-👉 **Insert your main application GIF here**  
 ![Retro Games Preview](Prezentarea%20aplicatiei.gif)
 
 ---
@@ -127,15 +126,13 @@ Used for responsive UI and clean layout:
 
 ## 🎞️ Tetris Gameplay Preview (GIF Placeholder)
 
-👉 **Insert your Tetris GIF here**  
-`![Tetris Gameplay](Prezentare%20Tetris.gif)`  
+![Tetris Gameplay](Prezentare%20Tetris.gif)  
 
 ---
 
 ## 📄 Documentation (PDF)
 
-👉 **Insert your PDF link here**  
-`[Full Documentation (PDF)](Cosereanu_Emanuel_licenta.pdf)`  
+[Full Documentation (PDF)](Cosereanu_Emanuel_licenta.pdf)
 
 ---
 
