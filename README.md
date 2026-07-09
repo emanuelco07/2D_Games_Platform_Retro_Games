@@ -13,7 +13,7 @@ The project blends nostalgia with current technologies, offering a clean interfa
 ## 📸 Application Preview (GIF Placeholder)
 
 👉 **Insert your main application GIF here**  
-`![Retro Games Preview](https://raw.githubusercontent.com/emanuelco07/2D_Games_Platform_Retro_Games/main/Prezentarea%20aplicatiei.gif)`  
+![Retro Games Preview](Prezentarea%20aplicatiei.gif)
 
 ---
 
