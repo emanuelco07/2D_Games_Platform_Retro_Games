@@ -21,7 +21,7 @@ export class AuthService {
     if(token)
       this.isAuthenticated = true; //daca exista un token inseamna ca suntem autentificati
     if(id) 
-      this.userId = Number(id); //incarcam si id ul utilizatorului in Local Storage
+      this.userId = Number(id); //incarcam si id ul utilizatorului din Local Storage
   }
 
   //facem o cerere de tip post catre backend-ul ASP.NET core pentru a loga un utilizator
@@ -61,7 +61,7 @@ export class AuthService {
 
   //verificam daca un utilizator este logat prin existenta token ului
   isLoggedIn(): boolean {
-    return !!localStorage.getItem('jwt_token'); //verificam prezenta token ului
+    return !!localStorage.getItem('jwt_token'); //verificam prezenta token ului, !! - converteste valorea in true/false
   }
 
   //obtinem token ul (va fi folosit de interceptor)

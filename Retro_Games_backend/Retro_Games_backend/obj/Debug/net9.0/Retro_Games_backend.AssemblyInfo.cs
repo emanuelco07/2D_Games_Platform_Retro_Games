@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Retro_Games_backend")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bbebb4f30c4eba44088806df73a8895cd6357395")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+74c16625bd26743bc41ae17b72bc7cf8ecd1f0aa")]
 [assembly: System.Reflection.AssemblyProductAttribute("Retro_Games_backend")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Retro_Games_backend")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
